@@ -31,12 +31,8 @@ node {
     }
 
     stage('Test') {
-        withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
-          sh 'ng test --progress=false --watch false'
-        }
-        junit '**/test-results.xml'
-    }
-
+ 
+withEnv (["CHROME_BIN = / usr / bin / chrome-browser", "CHROME_PATH = / usr / lib / chrome /"]) {sh'apk ajouter du chrome && npm installer && npm exécuter le test: ci && npm run build '}
     stage('Lint') {
         sh 'ng lint'
     }
