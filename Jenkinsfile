@@ -31,7 +31,7 @@ node {
     }
 
     stage('Test') {
-        withEnv(["CHROME_BIN=/usr/bin/chromium-browser"]) {
+        withEnv(["CHROME_BIN=/usr/local/bin/my-chrome-build"]) {
           sh 'ng test --progress=false --watch false'
         }
         junit '**/test-results.xml'
